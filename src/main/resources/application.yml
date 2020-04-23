@@ -64,4 +64,4 @@ spring:
 
 api:
   url:
-    space: http://space:8080
+    space: http://space:8080/space
