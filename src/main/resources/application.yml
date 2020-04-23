@@ -1,5 +1,18 @@
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    # 전역설정
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
+
+---
 server:
   port: 8081
+
 spring:
   data:
     rest:
@@ -18,17 +31,12 @@ spring:
         output:
           destination: animal
           contentType: application/json
+api:
+  url:
+    space: http://localhost:8083/space
 
 
-feign:
-  hystrix:
-    enabled: true
 
-hystrix:
- command:
-   # 전역설정
-   default:
-     execution.isolation.thread.timeoutInMilliseconds: 610
 
 
 ---
@@ -53,3 +61,7 @@ spring:
         output:
           destination: animal
           contentType: application/json
+
+api:
+  url:
+    space: http://space:8080
